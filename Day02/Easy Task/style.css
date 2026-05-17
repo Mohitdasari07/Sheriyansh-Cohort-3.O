@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  font-family: sans-serif;
+  color: #fff;
+}
+nav {
+  margin: 20px 45px;
+  margin-bottom: 0%;
+}
+#logo {
+  height: 40px;
+  width: 60px;
+}
+#name {
+  display: inline;
+  position: absolute;
+  top: 30px;
+  font-size: 21px;
+  font-weight: 500;
+}
+.menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  width: 450px;
+  top: 1%;
+  left: 15%;
+
+  transform: translate(30%, -80%);
+}
+li {
+  font-size: 14px;
+  list-style: none;
+  display: inline;
+  margin: 20px;
+  text-align: center;
+}
+#get {
+  display: block;
+  width: 100px;
+  height: 30px;
+  background-color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 550;
+  border: none;
+  color: #fff;
+  padding: 1px;
+  border-radius: 5px;
+}
+.contact {
+  position: absolute;
+  top: 5.1%;
+  right: 4.2%;
+}
+main {
+  width: 100%;
+  height: 95%;
+  position: relative;
+  top: 1%;
+  transform: translate(-0%, -10%);
+}
+.heading {
+  font-size: 110px;
+  text-align: center;
+  font-weight: 500;
+}
+.tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#all {
+  width: 55px;
+  height: 30px;
+  border: none;
+  font-weight: 500;
+  background-color: orangered;
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin: 13px;
+  border-radius: 13px;
+}
+#tech {
+  width: 60px;
+  height: 30px;
+  border: none;
+  font-weight: 500;
+  background-color: #1f1f1f;
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin: 13px;
+  border-radius: 13px;
+}
+#saas {
+  width: 65px;
+  height: 30px;
+  border: none;
+  font-weight: 500;
+  background-color: #1f1f1f;
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin: 13px;
+  border-radius: 13px;
+}
+#marketing {
+  width: 95px;
+  height: 30px;
+  border: none;
+  font-weight: 500;
+  background-color: #1f1f1f;
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin: 13px;
+  border-radius: 13px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 18px;
+}
+img {
+  background-size: cover;
+}
+.one,
+.two,
+.three {
+  width: 230px;
+  height: 260px;
+  border-radius: 10px;
+  background-color: #121010;
+}
+#img-1,
+#img-2,
+#img-3 {
+  width: 230px;
+  height: 160px;
+  border-radius: 12px;
+}
+#img-1 {
+  border-radius: 20px;
+}
+#img-2 {
+  height: 155px;
+}
+#tech-1,#tech-2,#tech-3{
+    background-color: #8B0000;
+    width: 45px;
+    height: 22px;
+    border: none;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #F08080;
+    margin: 8px 12px;
+}
+#tech-3{
+   width: 62px; 
+}
+.para{
+    font-size: 14px;
+    margin-left: 13px;
+}
+.date{
+    color: gray;
+    font-size: 11px;
+    margin-top: 5px;
+    margin-left: 13px;
+}
