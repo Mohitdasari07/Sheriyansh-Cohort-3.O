@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- this is the main page -->
+  <meta charset="UTF-8">
+  <title>SunMall Chips</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- this is the header -->
+<div class="topbar">
+  <a href="#" class="logo">Sun<span>Mall</span></a>
+
+  <ul class="menu">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Chips</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <div style="display:flex; align-items:center; gap:8px;">
+    <div class="searchbox">
+      <input type="text" placeholder="Search for chips...">
+    </div>
+    <button class="cartbtn" style="position:relative;">
+      🛒
+      <span class="cartcount">4</span>
+    </button>
+  </div>
+</div>
+
+<br>
+
+<!-- main content area -->
+<div class="mainbox">
+
+  <!-- left side text -->
+  <div class="leftdiv">
+    <div class="greenbadge">★ 100% Real Ingredients</div>
+
+    <br>
+
+    <h1 class="bigtitle">Eat Our <span style="color:#1a5c2e;">Grilled</span> Potato Chips</h1>
+
+    <br>
+
+    <p style="color:#666; font-size:13px;">Satisfying savory Chinese meat sauce chips without any hard-to-find ingredients.</p>
+
+    <br><br>
+
+    <!-- add to cart button -->
+    <div style="display:flex; align-items:center; gap:15px;">
+      <button class="mybutton">🛒 Add to Cart</button>
+      <div class="qtybox">
+        <button onclick="var q=document.getElementById('num'); q.innerText=Math.max(1,parseInt(q.innerText)-1)" style="background:none;border:none;font-size:18px;cursor:pointer;">−</button>
+        <span id="num">2</span>
+        <button onclick="var q=document.getElementById('num'); q.innerText=parseInt(q.innerText)+1" style="background:none;border:none;font-size:18px;cursor:pointer;">+</button>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!-- small icons row -->
+    <div style="display:flex; gap:20px;">
+      <div class="smallbadge">
+        <div class="roundicon" style="background:#e8f5e9;">🌿</div>
+        <div>
+          100% Natural
+          <br>
+          <span style="color:#888;font-size:10px;">No artificial flavors</span>
+        </div>
+      </div>
+      <div class="smallbadge">
+        <div class="roundicon" style="background:#fff3e0;">🔥</div>
+        <div>
+          Oven Grilled
+          <br>
+          <span style="color:#888;font-size:10px;">Not fried</span>
+        </div>
+      </div>
+      <div class="smallbadge">
+        <div class="roundicon" style="background:#fce4ec;">❤️</div>
+        <div>
+          Tasty &amp; Crunchy
+          <br>
+          <span style="color:#888;font-size:10px;">Irresistible bite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- center image -->
+  <div class="centerdiv">
+    <div class="greencircle"></div>
+
+    <!-- crispy badge -->
+    <div style="position:absolute; left:30px; bottom:90px; z-index:4;">
+      <div style="background:#f5c518; padding:6px 18px; border-radius:8px; font-family:'Lilita One',cursive; font-size:16px; transform:rotate(-3deg); margin-bottom:4px;">CRISPY &amp;</div>
+      <div style="background:#e23c3c; color:white; padding:6px 18px; border-radius:8px; font-family:'Lilita One',cursive; font-size:16px; transform:rotate(-3deg);">TASTY</div>
+    </div>
+
+    <img src="./chips-removebg-preview.png" class="chipimg" alt="chip packet">
+  </div>
+
+  <!-- right side info -->
+  <div class="rightdiv">
+
+    <div style="display:flex; gap:10px; margin-bottom:18px;">
+      <div class="iconround" style="background:#1a5c2e;">🌶️</div>
+      <div>
+        <div style="font-weight:800; font-size:12px; text-transform:uppercase;">Extra Chili</div>
+        <div style="font-size:11px; color:#777;">Zha Jiang mian is crazy hot even when it's simplified</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-bottom:18px;">
+      <div class="iconround" style="background:#c62828;">🍖</div>
+      <div>
+        <div style="font-weight:800; font-size:12px; text-transform:uppercase;">Beef Flavour</div>
+        <div style="font-size:11px; color:#777;">Comes with a lot extra energy calories and Oxizen</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px;">
+      <div class="iconround" style="background:#e65100;">🔥</div>
+      <div>
+        <div style="font-weight:800; font-size:12px; text-transform:uppercase;">Smokey Sauce</div>
+        <div style="font-size:11px; color:#777;">The meat sauce is kind of reminiscent of a Chinese.</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- bottom green strip -->
+<div class="bottomstrip">
+
+  <div class="striplabel">
+    Our Top<br>Flavours
+    <br>
+    <span style="font-size:9px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px;">— Top Picks —</span>
+  </div>
+
+  <!-- arrows -->
+  <div style="display:flex; gap:7px; margin-right:16px;">
+    <button class="arrowbtn leftarrow">←</button>
+    <button class="arrowbtn rightarrow">→</button>
+  </div>
+
+  <!-- cards -->
+  <div class="cardsarea">
+
+    <div class="flavcard">
+      <img src="./chips-removebg-preview.png" class="cardimg" alt="Black Barbecue">
+      <div>
+        <div style="font-weight:800; font-size:12px; text-transform:uppercase;">Black Barbecue</div>
+        <div style="color:#f5c518; font-size:11px;">★★★★★ <span style="color:#888;">(4.8)</span></div>
+        <div style="font-family:'Lilita One',cursive; font-size:16px;">$12.30</div>
+        <button class="orderbtn">Order Now →</button>
+      </div>
+    </div>
+
+    <div class="flavcard">
+      <img src="./chips-2-removebg-preview.png" class="cardimg" alt="Mr Potato">
+      <div>
+        <div style="font-weight:800; font-size:12px; text-transform:uppercase;">Mr. Potato</div>
+        <div style="color:#f5c518; font-size:11px;">★★★★★ <span style="color:#888;">(4.9)</span></div>
+        <div style="font-family:'Lilita One',cursive; font-size:16px;">$15.89</div>
+        <button class="orderbtn">Order Now →</button>
+      </div>
+    </div>
+
+    <div class="flavcard">
+      <img src="./chips-3-removebg-preview.png" class="cardimg" alt="Tom Yomm">
+      <div>
+        <div style="font-weight:800; font-size:12px; text-transform:uppercase;">Tom Yomm</div>
+        <div style="color:#f5c518; font-size:11px;">★★★★☆ <span style="color:#888;">(4.7)</span></div>
+        <div style="font-family:'Lilita One',cursive; font-size:16px;">$11.50</div>
+        <button class="orderbtn">Order Now →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

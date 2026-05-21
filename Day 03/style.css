@@ -1,0 +1,324 @@
+/* reset basic */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* page background */
+body {
+  background: #fdf6ec;
+  font-family: Arial, sans-serif;
+  color: #1a1a1a;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* top navbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 42px;
+  background: #fdf6ec;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+/* logo */
+.logo {
+  font-family: 'Lilita One', cursive;
+  font-size: 26px;
+  color: black;
+  text-decoration: none;
+}
+
+/* logo yellow part */
+.logo span {
+  color: #f5c518;
+}
+
+/* nav menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+/* nav links */
+.menu a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+/* active link */
+.menu a.active {
+  color: #1a5c2e;
+  border-bottom: 2px solid #1a5c2e;
+  padding-bottom: 2px;
+}
+
+/* search box */
+.searchbox {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 15px;
+}
+
+/* search input */
+.searchbox input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  width: 140px;
+  color: #666;
+  background: transparent;
+}
+
+/* cart button */
+.cartbtn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* cart number badge */
+.cartcount {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #e23c3c;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main content wrapper */
+.mainbox {
+  display: flex;
+  padding: 18px 42px 10px 42px;
+  height: 72vh;
+}
+
+/* left text section */
+.leftdiv {
+  width: 33%;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+
+/* green badge */
+.greenbadge {
+  background: #e6f4ea;
+  border: 1px solid #4caf50;
+  color: #1a5c2e;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 13px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* main heading */
+.bigtitle {
+  font-family: 'Lilita One', cursive;
+  font-size: 40px;
+  line-height: 1.1;
+  color: black;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+/* add to cart button */
+.mybutton {
+  background: black;
+  color: white;
+  border: none;
+  padding: 11px 22px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* quantity box */
+.qtybox {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 9px 16px;
+  background: white;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* small icon+text row */
+.smallbadge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* small icon circle */
+.roundicon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* center image section */
+.centerdiv {
+  width: 36%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* big green circle behind image */
+.greencircle {
+  width: 300px;
+  height: 300px;
+  background: #a5d6a7;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+
+/* chip packet image */
+.chipimg {
+  width: 260px;
+  position: relative;
+  z-index: 2;
+}
+
+/* right attributes section */
+.rightdiv {
+  width: 31%;
+  padding-left: 18px;
+  padding-top: 25px;
+}
+
+/* attribute icon circle */
+.iconround {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* bottom green flavours strip */
+.bottomstrip {
+  background: #1a5c2e;
+  padding: 14px 42px;
+  display: flex;
+  align-items: center;
+  height: 118px;
+}
+
+/* label on left of strip */
+.striplabel {
+  color: white;
+  font-family: 'Lilita One', cursive;
+  font-size: 18px;
+  line-height: 1.2;
+  min-width: 120px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding-right: 18px;
+  margin-right: 16px;
+}
+
+/* arrow buttons */
+.arrowbtn {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftarrow {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* yellow arrow */
+.rightarrow {
+  background: #f5c518;
+  color: black;
+}
+
+/* cards row */
+.cardsarea {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* single flavor card */
+.flavcard {
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  flex: 1;
+}
+
+/* card image */
+.cardimg {
+  width: 58px;
+  height: 68px;
+  object-fit: contain;
+}
+
+/* order button */
+.orderbtn {
+  background: #e23c3c;
+  color: white;
+  border: none;
+  padding: 5px 11px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
