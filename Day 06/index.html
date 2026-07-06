@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>E-commerce</h1>
+      <button class="create-btn">Create Product</button>
+    </nav>
+
+    <main class="container">
+      <div class="main-form">
+        <svg
+          class="close-btn"
+          width="64px"
+          height="64px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="#1f1f1f"
+            stroke-width="1.5"
+          ></circle>
+          <path
+            d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5"
+            stroke="#1f1f1f"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+
+        <div class="form">
+          <h1>Create product</h1>
+          <form>
+            <input
+              type="text"
+              name="product-name"
+              id="product-name"
+              placeholder="Product name"
+            />
+            <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Description"
+            />
+            <input type="number" name="price" id="price" placeholder="Price" />
+            <input
+              type="text"
+              name="image-url"
+              id="image-url"
+              placeholder="Image url"
+            />
+            <button type="submit" class="btn-create">Create</button>
+          </form>
+        </div>
+      </div>
+      <!-- <div class="card">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuygN0Xi2RzqfJyccAsnPugMyHxUFsE1o-oZkY6nguiA&s=10"
+        alt="product"
+      />
+
+      <div class="details">
+        <h3>Mobile</h3>
+        <p>S26 ULTRA 12-256GB BLACK</p>
+        <p class="price">₹ 1,50,000</p>
+
+        <div class="actions">
+          <button class="update">Update</button>
+          <button class="delete">Delete</button>
+        </div>
+      </div>
+    </div> -->
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
