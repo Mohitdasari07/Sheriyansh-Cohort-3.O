@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loome — A Cotton Weave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="logo">loome<span>.</span></div>
+    <ul class="nav-links" role="list">
+      <li>Home</li>
+      <li class="nav-active">Shop</li>
+      <li>Collection</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-btn" aria-label="Cart (2 items)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-badge">2</span>
+      </button>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── PAGE GRID ── -->
+  <main class="page-grid">
+
+    <!-- LEFT PANEL -->
+    <aside class="left-panel">
+
+      <div class="collection-tag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a5a44" stroke-width="1.5" aria-hidden="true">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </svg>
+        <span class="collection-label">NEW COLLECTION</span>
+      </div>
+
+      <h1 class="hero-title">a cotton<br>weave</h1>
+      <div class="title-rule"></div>
+
+      <p class="product-desc">
+        Crafted from 100% organic cotton with a soft, breathable feel.
+        Perfect for all seasons and everyday elegance.
+      </p>
+
+      <div class="color-section">
+        <h2 class="color-heading">colors</h2>
+        <div class="color-dots" role="group" aria-label="Color options">
+          <button class="cdot active" style="--c:#4a5a44" aria-label="Forest green"></button>
+          <button class="cdot" style="--c:#e8ddd0" aria-label="Sand"></button>
+          <button class="cdot" style="--c:#c97080" aria-label="Rose"></button>
+        </div>
+      </div>
+
+      <div class="details-section">
+        <div class="details-heading">
+          <span>Details</span>
+          <div class="details-rule"></div>
+        </div>
+        <p class="details-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Accusamus, sapiente. Ipsam maiores nemo, quidem veniam et atque
+          suscipit, saepe doloribus ab molestiae deserunt?
+          Totam natus eligendi neque.
+        </p>
+      </div>
+
+      <div class="features-row">
+        <div class="feat">
+          <div class="feat-icon">
+            <img src="./image copy.png" alt="" width="28" height="22" />
+          </div>
+          <p>Organic<br>Cotton</p>
+        </div>
+        <div class="feat-sep"></div>
+        <div class="feat">
+          <div class="feat-icon">
+            <img src="./image copy 2.png" alt="" width="28" height="22" />
+          </div>
+          <p>Soft &amp;<br>Lightweight</p>
+        </div>
+        <div class="feat-sep"></div>
+        <div class="feat">
+          <div class="feat-icon">
+            <img src="./image copy 3.png" alt="" width="28" height="22" />
+          </div>
+          <p>Handmade<br>Weave</p>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- CENTER PANEL -->
+    <section class="center-panel" aria-label="Product image">
+
+      <div class="product-card">
+        <img id="main-img"
+             src="./image.png"
+             alt="Cotton twill scarf on model"
+             class="product-main-img" />
+
+        <div class="badge price-badge">$488</div>
+
+        <div class="badge rating-badge">
+          Rating
+          <span class="stars" aria-label="4 out of 5 stars">
+            ★★★★<span class="star-empty">★</span>
+          </span>
+        </div>
+
+        <button class="add-bag-btn" aria-label="Add to bag">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span>Add to<br>bag</span>
+        </button>
+
+        <div class="vertical-label" aria-hidden="true">cotton twill scarf</div>
+      </div>
+
+      <div class="shipping-strip">
+        <div class="ship-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <div><strong>Secure</strong><span>Payment</span></div>
+        </div>
+        <div class="ship-sep"></div>
+        <div class="ship-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="1" y="3" width="15" height="13" rx="2"/>
+            <path d="M16 8h4l3 5v3h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+          <div><strong>Free Shipping</strong><span>Over $100</span></div>
+        </div>
+        <div class="ship-sep"></div>
+        <div class="ship-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 .49-4.36"/>
+          </svg>
+          <div><strong>Easy Returns</strong><span>30 Days</span></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT — THUMBNAIL SIDEBAR -->
+    <aside class="thumb-sidebar" aria-label="Product thumbnails">
+      <button class="thumb active"
+              data-img="./download__1_-removebg-preview.png"
+              aria-label="View image 1">
+        <img src="./image.png" alt="Model wearing scarf" />
+      </button>
+      <button class="thumb"
+              data-img="./image copy.png"
+              aria-label="View image 2">
+        <img src="./image copy 4.png" alt="Fabric close-up" />
+      </button>
+      <button class="thumb"
+              data-img="./image copy 2.png"
+              aria-label="View image 3">
+        <img src="./image copy 5.png" alt="Scarf draped" />
+      </button>
+      <button class="thumb"
+              data-img="./image copy 3.png"
+              aria-label="View image 4">
+        <img src="./image copy 6.png" alt="Cotton detail" />
+      </button>
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

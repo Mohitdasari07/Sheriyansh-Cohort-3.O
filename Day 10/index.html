@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel — Daily Productivity Console</title>
+    <meta
+      name="description"
+      content="A precision productivity console for tasks, planning, goals and focus time."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="console">
+      <!-- SIDEBAR -->
+      <aside class="rail">
+        <div class="rail-mark">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 12h4l3 8 4-16 3 8h4" />
+          </svg>
+          <span>PANEL</span>
+        </div>
+
+        <nav class="rail-nav">
+          <button class="rail-item is-active" data-view="dashboard">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <rect x="3" y="3" width="7" height="9" rx="1.5" />
+              <rect x="14" y="3" width="7" height="5" rx="1.5" />
+              <rect x="14" y="12" width="7" height="9" rx="1.5" />
+              <rect x="3" y="16" width="7" height="5" rx="1.5" />
+            </svg>
+            <span>Overview</span>
+          </button>
+          <button class="rail-item" data-view="todo">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M9 6h11M9 12h11M9 18h11" />
+              <path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2" />
+            </svg>
+            <span>Task List</span>
+          </button>
+          <button class="rail-item" data-view="planner">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <rect x="3" y="4.5" width="18" height="16" rx="1.5" />
+              <path d="M3 9.5h18M8 3v3M16 3v3" />
+            </svg>
+            <span>Day Planner</span>
+          </button>
+          <button class="rail-item" data-view="goals">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="8.5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle cx="12" cy="12" r="0.6" fill="currentColor" />
+            </svg>
+            <span>Daily Goals</span>
+          </button>
+          <button class="rail-item" data-view="pomodoro">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="13" r="8" />
+              <path d="M12 9v4l3 2M9.5 2h5" />
+            </svg>
+            <span>Focus Timer</span>
+          </button>
+          <button class="rail-item" data-view="quotes">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                d="M7 8c-2 0-3.5 1.6-3.5 4S5 16 7 16M17 8c-2 0-3.5 1.6-3.5 4s1.5 4 3.5 4"
+              />
+            </svg>
+            <span>Daily Notes</span>
+          </button>
+        </nav>
+
+        <button id="theme-toggle" class="rail-theme" aria-label="Toggle theme">
+          <svg
+            class="ic-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="12" r="4.2" />
+            <path
+              d="M12 2.5v3M12 18.5v3M4.2 4.2l2 2M17.8 17.8l2 2M2.5 12h3M18.5 12h3M4.2 19.8l2-2M17.8 6.2l2-2"
+            />
+          </svg>
+          <svg
+            class="ic-moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" />
+          </svg>
+          <span id="theme-label">Dark mode</span>
+        </button>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="deck">
+        <header class="deck-header">
+          <div class="deck-heading">
+            <span class="eyebrow" id="view-eyebrow">CONSOLE / 01</span>
+            <h1 id="view-title">Overview</h1>
+          </div>
+
+          <div class="instruments">
+            <div class="gauge-chip">
+              <span class="chip-label">TIME</span>
+              <span id="clock-time" class="chip-value mono">00:00:00</span>
+              <span id="clock-date" class="chip-sub">—</span>
+            </div>
+            <div class="gauge-chip">
+              <span class="chip-label">WEATHER</span>
+              <span id="weather-value" class="chip-value mono">— —</span>
+              <span id="weather-sub" class="chip-sub">Locating…</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="deck-body">
+          <!-- OVERVIEW -->
+          <section class="view is-active" data-view="dashboard">
+            <div class="overview-grid">
+              <div class="col-main">
+                <div class="panel intro-panel">
+                  <p class="intro-kicker" id="greeting-line">Good day.</p>
+                  <h2 id="greeting-headline">Here's where today stands.</h2>
+                </div>
+
+                <div class="row-2col">
+                  <div class="panel dial-panel">
+                    <div class="panel-head">
+                      <span class="panel-eyebrow">GOALS</span>
+                      <h3>Completion rate</h3>
+                    </div>
+                    <div class="dial-row">
+                      <div class="dial-holder">
+                        <svg
+                          id="goal-dial-ticks"
+                          class="dial-face"
+                          viewBox="0 0 160 160"
+                        ></svg>
+                        <svg class="dial-progress" viewBox="0 0 160 160">
+                          <circle cx="80" cy="80" r="62" class="dial-track" />
+                          <circle
+                            id="goal-dial-arc"
+                            cx="80"
+                            cy="80"
+                            r="62"
+                            class="dial-arc"
+                          />
+                        </svg>
+                        <div class="dial-readout">
+                          <span id="goal-percent" class="mono">0%</span>
+                          <span class="dial-caption">done</span>
+                        </div>
+                      </div>
+                      <div class="dial-legend">
+                        <div class="legend-row">
+                          <span class="legend-dot dot-accent"></span>
+                          <span class="legend-text">Completed</span>
+                          <span id="goal-done-count" class="legend-val mono"
+                            >0</span
+                          >
+                        </div>
+                        <div class="legend-row">
+                          <span class="legend-dot dot-outline"></span>
+                          <span class="legend-text">Total set</span>
+                          <span id="goal-total-count" class="legend-val mono"
+                            >0</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="panel preview-panel">
+                    <div class="panel-head">
+                      <span class="panel-eyebrow">PLANNER</span>
+                      <h3>Next on schedule</h3>
+                    </div>
+                    <div id="planner-preview" class="preview-list"></div>
+                    <button class="text-link" data-goto="planner">
+                      Open full planner
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-side">
+                <div class="panel side-panel">
+                  <div class="panel-head">
+                    <span class="panel-eyebrow">TASKS</span>
+                    <h3>Due today</h3>
+                    <span id="side-task-badge" class="count-pill mono">0</span>
+                  </div>
+                  <div id="side-task-list" class="side-task-list"></div>
+                  <button class="text-link full" data-goto="todo">
+                    Manage tasks
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TASK LIST -->
+          <section class="view" data-view="todo">
+            <form id="todo-form" class="field-row">
+              <div class="field">
+                <svg
+                  class="field-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M9 6h11M9 12h11M9 18h11" />
+                  <path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2" />
+                </svg>
+                <input
+                  type="text"
+                  id="todo-input"
+                  placeholder="Add a task for today"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn-solid">Add task</button>
+            </form>
+
+            <div class="filter-bar">
+              <div class="filter-group">
+                <button class="filter-tab is-active" data-filter="all">
+                  All
+                </button>
+                <button class="filter-tab" data-filter="important">
+                  Important
+                </button>
+                <button class="filter-tab" data-filter="done">Completed</button>
+              </div>
+              <span id="todo-count" class="mono muted-sm">0 active</span>
+            </div>
+
+            <ul id="todo-list" class="stack-list"></ul>
+            <p id="todo-empty" class="empty-state hidden">
+              No tasks match this view.
+            </p>
+          </section>
+
+          <!-- PLANNER -->
+          <section class="view" data-view="planner">
+            <div class="note-strip">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 8v4l3 2" />
+              </svg>
+              <span
+                >Type into any hour to schedule it. Entries save
+                automatically.</span
+              >
+            </div>
+            <div id="planner-list" class="planner-list"></div>
+          </section>
+
+          <!-- GOALS -->
+          <section class="view" data-view="goals">
+            <div class="panel track-panel">
+              <div class="track-head">
+                <span>Daily milestones</span>
+                <span id="goals-progress-label" class="mono">0 / 0</span>
+              </div>
+              <div class="track-bar">
+                <div id="goals-progress-fill" class="track-fill"></div>
+              </div>
+            </div>
+
+            <form id="goals-form" class="field-row">
+              <div class="field">
+                <svg
+                  class="field-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <circle cx="12" cy="12" r="8.5" />
+                  <circle cx="12" cy="12" r="3.2" />
+                </svg>
+                <input
+                  type="text"
+                  id="goal-input"
+                  placeholder="Set a key goal for today"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn-solid">Add goal</button>
+            </form>
+
+            <ul id="goals-list" class="stack-list"></ul>
+            <p id="goals-empty" class="empty-state hidden">No goals set yet.</p>
+          </section>
+
+          <!-- POMODORO -->
+          <section class="view" data-view="pomodoro">
+            <div class="focus-wrap">
+              <div class="dial-holder dial-holder--lg">
+                <svg
+                  id="timer-dial-ticks"
+                  class="dial-face"
+                  viewBox="0 0 220 220"
+                ></svg>
+                <svg class="dial-progress" viewBox="0 0 220 220">
+                  <circle cx="110" cy="110" r="88" class="dial-track" />
+                  <circle
+                    id="timer-dial-arc"
+                    cx="110"
+                    cy="110"
+                    r="88"
+                    class="dial-arc"
+                  />
+                </svg>
+                <div class="dial-readout">
+                  <span id="timer-phase" class="phase-tag">WORK SESSION</span>
+                  <span id="timer-time" class="mono timer-digits">25:00</span>
+                </div>
+              </div>
+
+              <div class="focus-controls">
+                <button id="timer-start" class="btn-solid">Start</button>
+                <button id="timer-pause" class="btn-outline" disabled>
+                  Pause
+                </button>
+                <button id="timer-reset" class="btn-ghost">Reset</button>
+              </div>
+
+              <div class="focus-settings">
+                <label class="select-field">
+                  <span>Work period</span>
+                  <select id="work-duration">
+                    <option value="15">15 min</option>
+                    <option value="25" selected>25 min</option>
+                    <option value="30">30 min</option>
+                    <option value="45">45 min</option>
+                    <option value="50">50 min</option>
+                  </select>
+                </label>
+                <label class="select-field">
+                  <span>Break period</span>
+                  <select id="break-duration">
+                    <option value="5" selected>5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- QUOTES -->
+          <section class="view" data-view="quotes">
+            <div class="quote-panel">
+              <span class="quote-mark">“</span>
+              <p id="quote-text">
+                The only way to do great work is to love what you do.
+              </p>
+              <span id="quote-author" class="quote-author">— Steve Jobs</span>
+            </div>
+            <button id="new-quote-btn" class="btn-solid center">
+              Next quote
+            </button>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
